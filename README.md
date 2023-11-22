@@ -1,3 +1,7 @@
+## Bee Critic
+
+O aplicativo que te ajuda a compartilhar e descobrir opiniões sobre filmes e séries. Com o Bee Critic, você pode dar um feedback sobre o que assistiu, ver o que os seus amigos estão comentando, e encontrar novas recomendações baseadas nos seus gostos.
+
 ### 📱 Rodando o App
 
 ```bash
