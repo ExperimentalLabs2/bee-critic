@@ -2,7 +2,7 @@
 
 ```bash
 # Clone este repositório
-$ git clone git@github.com/EnzoMaitan/bee-critic.git
+$ git clone git@github.com:EnzoMaitan/bee-critic.git
 
 # Acesse a pasta do projeto no terminal/cmd
 $ cd bee-critic
