@@ -18,17 +18,17 @@ export default function App() {
       >
         <Stack.Screen 
           options={{ headerShown: false }}
-          name="login" 
+          name="LoginScreen" 
           component={LoginScreen} 
         />
         <Stack.Screen 
           options={{ headerShown: false }}
-          name="register" 
+          name="RegisterScreen" 
           component={RegisterScreen} 
         />
         <Stack.Screen 
           options={{ headerShown: false }}
-          name="feed" 
+          name="FeedScreen" 
           component={FeedScreen} 
         />
       </Stack.Navigator>
