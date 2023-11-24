@@ -1,11 +1,37 @@
-import { StatusBar } from 'expo-status-bar';
-import { Text, View } from 'react-native';
+import React from 'react'
+
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+
+import FeedScreen from './src/screens/Feed';
+import LoginScreen from './src/screens/Login';
+import RegisterScreen from './src/screens/Register';
+
+const Stack = createNativeStackNavigator();
 
 export default function App() {
   return (
-    <View className="flex-1 items-center justify-center bg-stone-950">
-      <Text className="text-slate-100">Teste</Text>
-      <StatusBar style="auto" />
-    </View>
+
+    <NavigationContainer>
+      <Stack.Navigator 
+        initialRouteName="Login"
+      >
+        <Stack.Screen 
+          options={{ headerShown: false }}
+          name="login" 
+          component={LoginScreen} 
+        />
+        <Stack.Screen 
+          options={{ headerShown: false }}
+          name="register" 
+          component={RegisterScreen} 
+        />
+        <Stack.Screen 
+          options={{ headerShown: false }}
+          name="feed" 
+          component={FeedScreen} 
+        />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 }
