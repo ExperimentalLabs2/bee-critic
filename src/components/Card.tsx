@@ -11,7 +11,7 @@ interface CardItems {
 const Card: ListRenderItem<CardItems> = ({item, index}) => {
 
   return (
-    <View className=" bg-red-100 h-[300px] w-[70%] self-center">
+    <View className=" bg-red-50 h-[300px]">
       <Text>{item.name}</Text>
     </View>
   )
