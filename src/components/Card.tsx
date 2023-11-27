@@ -9,9 +9,8 @@ interface CardItems {
 }
 
 const Card: ListRenderItem<CardItems> = ({item, index}) => {
-
   return (
-    <View className=" bg-red-50 h-[300px]">
+    <View className="bg-zinc-700 h-[300px]">
       <Text>{item.name}</Text>
     </View>
   )

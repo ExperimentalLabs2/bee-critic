@@ -1,19 +1,16 @@
-import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
-import { NavigationContainer } from '@react-navigation/native';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
+
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
+
 import { Feather } from '@expo/vector-icons';
 
-import LoginScreen from '../screens/Login';
-import RegisterScreen from '../screens/Register';
 import FeedScreen from '../screens/Feed';
 import SearchScreen from '../screens/Search';
 import NewPostScreen from '../screens/NewPost';
 import NotificationsScreen from '../screens/Notifications';
 import AccountScreen from '../screens/Account';
 
-const feed = "FeedScren";
+const feed = "FeedScreen";
 const search = "SearchScreen";
 const newPost = "NewPostScreen";
 const notifications = "NotificationScreen"
@@ -23,7 +20,6 @@ const Tab = createBottomTabNavigator();
 
 export default function Routes() {
   return (
-    <NavigationContainer>
       <Tab.Navigator 
         initialRouteName="Login"
         screenOptions={({ route }) => ({
@@ -32,63 +28,46 @@ export default function Routes() {
             let rn = route.name;
 
             if (rn === feed) {
-              iconName = focused ? 'home' : 'home';
+              iconName = 'home'
             } else if (rn === search) {
-              iconName = focused ? 'search' : 'search';
+              iconName = 'search';
             } else if (rn === newPost) {
-              iconName = focused ? 'plus-circle' : 'plus-circle';
+              iconName = 'plus-circle';
             } else if (rn === notifications) {
-              iconName = focused ? 'bell' : 'bell';
+              iconName = 'bell';
             } else if (rn === account) {
-              iconName = focused ? 'user' : 'user';
+              iconName = 'user';
             }
 
-            // You can return any component that you like here!
             return <Feather name={iconName} size={size} color={color} />;
           },
         })}
-        tabBarOptions={{
-          activeTintColor: 'tomato',
-          inactiveTintColor: 'grey',
-          labelStyle: { paddingBottom: 0, fontSize: 10 },
-          style: { padding: 10, height: 70}
-        }}>
+        >
         <Tab.Screen 
-          options={{ headerShown: false }}
-          name="LoginScreen" 
-          component={LoginScreen} 
-        />
-        <Tab.Screen 
-          options={{ headerShown: false }}
-          name="RegisterScreen"
-          component={RegisterScreen} 
-        />
-        <Tab.Screen 
-          // options={{ headerShown: false }}
           name="FeedScreen" 
-          component={FeedScreen} 
+          component={FeedScreen}
+          options={{ tabBarLabel: () => null, headerShown: false }}
         />
         <Tab.Screen 
-          // options={{ headerShown: false }}
           name="SearchScreen" 
           component={SearchScreen} 
+          options={{ tabBarLabel: () => null }}
         />
         <Tab.Screen 
-          // options={{ headerShown: false }}
           name="NewPostScreen" 
-          component={NewPostScreen} 
+          component={NewPostScreen}
+          options={{ tabBarLabel: () => null }}
         />
         <Tab.Screen 
-          // options={{ headerShown: false }}
           name="NotificationScreen" 
           component={NotificationsScreen} 
+          options={{ tabBarLabel: () => null }}
         />
         <Tab.Screen 
-          options={{ headerShown: false }}
           name="AccountScreen" 
-          component={AccountScreen} 
+          component={AccountScreen}
+          options={{ tabBarLabel: () => null }}
         />
       </Tab.Navigator>
-    </NavigationContainer>
   )
 }

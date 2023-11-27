@@ -21,10 +21,10 @@ export default function Login() {
           <View className="flex-row justify-between pt-4">
             <Checkbox />
             <TouchableOpacity>
-              <Text className="text-gray-950 font-regular text-md">Forgot Password?</Text>
+              <Text className="text-zinc-900 font-regular text-md">Forgot Password?</Text>
             </TouchableOpacity>
           </View>
-          <Button onPress={() => navigate('FeedScreen')} text="Login" />
+          <Button onPress={() => navigate('Routes')} text="Login" />
           <View className="justify-center items-center mt-8 flex-row">
             <View className="h-[3px] w-24 bg-[#CDCED1]"></View>
             <Text className="px-4 text-[#747980]">or continue with</Text>
