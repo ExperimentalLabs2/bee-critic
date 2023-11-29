@@ -21,7 +21,7 @@ export default function Login() {
           <View className="flex-row justify-between pt-4">
             <Checkbox />
             <TouchableOpacity>
-              <Text className="text-zinc-900 font-regular text-md">Forgot Password?</Text>
+              <Text className="text-zinc-950 font-regular text-md">Forgot Password?</Text>
             </TouchableOpacity>
           </View>
           <Button onPress={() => navigate('Routes')} text="Login" />
@@ -36,7 +36,7 @@ export default function Login() {
             <TouchableOpacity
               onPress={() => navigate('RegisterScreen')}
             >
-              <Text className="text-gray-950">Signup</Text>
+              <Text className="text-zinc-950">Signup</Text>
             </TouchableOpacity>
           </View>
         </View>
