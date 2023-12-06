@@ -1,19 +1,27 @@
-import { Text, View, ListRenderItem } from "react-native";
+import { TouchableOpacity, Text } from 'react-native';
 
-interface CardItems {
-  name: String,
-  avatar: String,
-  thumb: String,
-  title: String,
-  description: String,
-}
+type ItemProps = {
+  item: {
+    id: number;
+    name: string;
+    avatar: any;
+    thumb: string;
+    title: string;
+    description: string;
+  };
+  onPress: () => void;
+ };
+ 
+ 
+const Item = ({ item, onPress }: ItemProps) => (
+  <TouchableOpacity onPress={onPress} className="p-4 bg-zinc-100 rounded-lg mb-8">
+    <Text className="text-xl">{item.id}</Text>
+    <Text className="text-xl">{item.name}</Text>
+    <Text className="text-xl">{item.avatar}</Text>
+    <Text className="text-xl">{item.thumb}</Text>
+    <Text className="text-xl">{item.title}</Text>
+    <Text className="text-xl">{item.description}</Text>
+  </TouchableOpacity>
+);
 
-const Card: ListRenderItem<CardItems> = ({item, index}) => {
-  return (
-    <View className="bg-zinc-700 h-[300px]">
-      <Text>{item.name}</Text>
-    </View>
-  )
-}
-
-export default Card;
+export default Item;

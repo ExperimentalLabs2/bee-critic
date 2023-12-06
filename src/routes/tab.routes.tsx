@@ -41,6 +41,8 @@ export default function Routes() {
 
             return <Feather name={iconName} size={size} color={color} />;
           },
+          tabBarActiveTintColor: '#09090B',
+          tabBarInactiveTintColor: 'gray',
         })}
         >
         <Tab.Screen 
