@@ -1,12 +1,7 @@
-<<<<<<< HEAD
-import React from 'react'
-import { View, SafeAreaView, FlatList } from 'react-native'
 import { ScrollView } from 'react-native-virtualized-view'
-=======
 import React, { useState } from 'react'
 import { View, SafeAreaView, FlatList, Text } from 'react-native'
 import { StatusBar } from 'expo-status-bar';
->>>>>>> eabe52e92454e22c4b5d9ab931d1ae7fee12e268
 
 import Header from '../components/Header';
 import { DATA } from '../../mockdata/mockCard';
@@ -22,15 +17,6 @@ type ItemData = {
  };
  
 export default function Feed() {
-<<<<<<< HEAD
-  return (
-    <SafeAreaView className="flex-1">
-      <ScrollView>
-        <Header />
-        <View className="mt-3 justify-center items-center bg-purple-500">
-              <FlatList data={mockCard} renderItem={Card}/>
-        </View>
-=======
   const [selectedId, setSelectedId] = useState<number>();
 
   const renderItem = ({ item }: { item: ItemData }) => {
@@ -45,6 +31,7 @@ export default function Feed() {
 
   return (
     <SafeAreaView className="flex-1 bg-white">
+      <ScrollView>
         <Header />
           <View className="mt-3 flex-1 justify-center items-center">
           <FlatList
@@ -56,7 +43,6 @@ export default function Feed() {
             showsVerticalScrollIndicator={false}
           />
           </View>
->>>>>>> eabe52e92454e22c4b5d9ab931d1ae7fee12e268
         <StatusBar style="auto" />
       </ScrollView>
     </SafeAreaView>
