@@ -12,22 +12,24 @@ type ItemData = {
   name: string;
   avatar: any;
   thumb: string;
-  title: string;
-  description: string;
- };
- 
-export default function Feed() {
-  const [selectedId, setSelectedId] = useState<number>();
-
-  const renderItem = ({ item }: { item: ItemData }) => {
-
-    return (
-      <Item
-        item={item}
-        onPress={() => setSelectedId(item.id)}
-      />
-    );
+  movie: {
+    title: string;
+    year: number;
   };
+  description: string;
+};
+
+export default function Feed() {
+ const [selectedId, setSelectedId] = useState<number>();
+
+ const renderItem = ({ item }: { item: ItemData }) => {
+   return (
+     <Item
+       item={item}
+       onPress={() => setSelectedId(item.id)}
+     />
+   );
+ };
 
   return (
     <SafeAreaView className="flex-1 bg-white">
@@ -35,7 +37,6 @@ export default function Feed() {
         <Header />
           <View className="mt-3 flex-1 justify-center items-center">
           <FlatList
-            className="w-80"
             data={DATA}
             renderItem={renderItem}
             keyExtractor={(item) => item.id.toString()}
@@ -44,7 +45,7 @@ export default function Feed() {
           />
           </View>
         <StatusBar style="auto" />
-      </ScrollView>
+        </ScrollView>
     </SafeAreaView>
   )
 }

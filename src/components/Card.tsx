@@ -1,26 +1,43 @@
-import { TouchableOpacity, Text } from 'react-native';
+import { TouchableOpacity, Text, Image, View } from 'react-native';
 
 type ItemProps = {
   item: {
     id: number;
     name: string;
     avatar: any;
-    thumb: string;
-    title: string;
+    thumb: any;
+    movie: {
+      title: string;
+      year: number;
+    };
     description: string;
   };
   onPress: () => void;
- };
- 
- 
+};
+
 const Item = ({ item, onPress }: ItemProps) => (
-  <TouchableOpacity onPress={onPress} className="p-4 bg-zinc-100 rounded-lg mb-8">
-    <Text className="text-xl">{item.id}</Text>
-    <Text className="text-xl">{item.name}</Text>
-    <Text className="text-xl">{item.avatar}</Text>
-    <Text className="text-xl">{item.thumb}</Text>
-    <Text className="text-xl">{item.title}</Text>
-    <Text className="text-xl">{item.description}</Text>
+  <TouchableOpacity onPress={onPress} className="px-4 rounded-lg mb-8">
+    <View className="flex-row items-center mb-3">
+      <Image
+        className="w-[35px] h-[35px] mr-2"
+        source={item.avatar}
+      />
+      <Text className="text-sm">{item.name}</Text>
+      <TouchableOpacity className="ml-2">
+        <Text className="text-link">follow</Text>
+      </TouchableOpacity>
+    </View>
+    <Image className="w-full rounded-lg"
+      style={{ height: 200 }}
+      source={item.thumb}
+    />
+    <View className="flex-row justify-between items-center my-3">
+      <Text className="text-lg font-medium">{item.movie.title}</Text>
+      <Text className="text-lg font-medium">{item.movie.year}</Text>
+    </View>
+    <View className="bg-zinc-300 rounded-lg">
+      <Text className="text-md m-2">{item.description}</Text>
+    </View>
   </TouchableOpacity>
 );
 
