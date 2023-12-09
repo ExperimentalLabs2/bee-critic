@@ -1,16 +1,13 @@
-import { TouchableOpacity, View } from "react-native";
+import React from 'react';
+import { TouchableOpacity, View } from 'react-native';
 
-import Facebook from "../../assets/facebook.svg"
-import Google from '../../assets/google.svg'
+import Facebook from '../../assets/facebook.svg';
+import Google from '../../assets/google.svg';
 
-export function SocialLogin() {
-
+export default function SocialLogin() {
   return (
     <View className="flex-row justify-around mt-5">
-      <TouchableOpacity
-        className="border p-4 border-[#CDCED1] rounded-md"
-        disabled={true}
-      >
+      <TouchableOpacity className="border p-4 border-[#CDCED1] rounded-md" disabled>
         <Facebook />
       </TouchableOpacity>
       <TouchableOpacity
@@ -20,5 +17,5 @@ export function SocialLogin() {
         <Google />
       </TouchableOpacity>
     </View>
-  )
+  );
 }
